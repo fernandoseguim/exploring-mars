@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  exploringmars:
+    image: exploringmars
+    build:
+      context: ./ExploringMars
+      dockerfile: Dockerfile
