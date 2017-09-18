@@ -20,7 +20,7 @@ namespace ExploringMars.Model.Cardinals
 
         public override bool IsPossibleMove(SpaceProbe spaceProbe, SpaceProbePositioner spaceProbePositioner)
         {
-            return spaceProbe.PositionY < spaceProbePositioner.LimitY;
+            return spaceProbe.PositionX > 0;
         }
 
         public override Direction ToLeft()

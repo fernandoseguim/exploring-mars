@@ -15,7 +15,7 @@
 
         public override bool IsPossibleMove(SpaceProbe spaceProbe, SpaceProbePositioner spaceProbePositioner)
         {
-            return spaceProbe.PositionY < spaceProbePositioner.LimitY;
+            return spaceProbe.PositionX < spaceProbePositioner.LimitX;
         }
 
         public override Direction ToLeft()
