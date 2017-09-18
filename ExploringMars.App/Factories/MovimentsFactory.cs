@@ -1,4 +1,5 @@
-﻿using ExploringMars.Models;
+﻿using ExploringMars.Exceptions;
+using ExploringMars.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -27,6 +28,8 @@ namespace ExploringMars.Factories
                     case "M":
                         movimentsList.Add(new MovimentAgent(spaceProbePositioner));
                         break;
+                    default:
+                        throw new InvalidMovimentException(moviment);
                 }
             }
             

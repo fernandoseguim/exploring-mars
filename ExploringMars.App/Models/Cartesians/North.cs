@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace ExploringMars.Models.Cartesians
+﻿namespace ExploringMars.Models.Cartesians
 {
     public class North : Direction
     {
+        
         public override Point Current { get; protected set; }
         public override Point Left { get; protected set; }
         public override Point Right { get; protected set; }
@@ -37,5 +33,6 @@ namespace ExploringMars.Models.Cartesians
         {
             return spaceProbe.PositionY++;
         }
+        
     }
 }

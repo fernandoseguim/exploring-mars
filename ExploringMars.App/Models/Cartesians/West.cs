@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace ExploringMars.Models.Cartesians
+﻿namespace ExploringMars.Models.Cartesians
 {
     public class West : Direction
     {

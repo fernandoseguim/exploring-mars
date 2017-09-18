@@ -1,7 +1,9 @@
 ﻿using ExploringMars.Models.Cartesians;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 
 namespace ExploringMars.Models
@@ -30,5 +32,15 @@ namespace ExploringMars.Models
 
         }
 
+        public override string ToString()
+        {
+            
+            return string.Format(
+                "\n{0} {1} {2}",
+                PositionX,
+                PositionY,
+                Direction.Current.ToString().Substring(0,1)
+                );
+        }
     }
 }
