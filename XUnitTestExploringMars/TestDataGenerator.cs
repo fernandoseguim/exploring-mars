@@ -1,5 +1,5 @@
-﻿using ExploringMars.Model;
-using ExploringMars.Model.Cardinals;
+﻿using ExploringMars.Models;
+using ExploringMars.Models.Cardinals;
 using System;
 using System.Collections;
 using System.Collections.Generic;

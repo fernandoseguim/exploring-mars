@@ -1,7 +1,6 @@
 ﻿using ExploringMars.Exceptions;
-using ExploringMars.Model;
-using ExploringMars.Model.Cardinals;
-using System;
+using ExploringMars.Models;
+using ExploringMars.Models.Cardinals;
 using Xunit;
 
 namespace XUnitTestExploringMars

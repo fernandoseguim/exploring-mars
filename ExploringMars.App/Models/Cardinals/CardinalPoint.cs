@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ExploringMars.Model.Cardinals
+namespace ExploringMars.Models.Cardinals
 {
     public enum Point
     {

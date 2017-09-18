@@ -1,4 +1,4 @@
-﻿namespace ExploringMars.Model.Cardinals
+﻿namespace ExploringMars.Models.Cardinals
 {
     public class South : Direction
     {

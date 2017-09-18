@@ -1,13 +1,10 @@
-using ExploringMars.Model;
-using ExploringMars.Model.Cardinals;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Reflection;
+using ExploringMars.Models;
+using ExploringMars.Models.Cardinals;
 using Xunit;
 
 namespace XUnitTestExploringMars
 {
-    
+
     public class TestSpaceProbe
     {
 

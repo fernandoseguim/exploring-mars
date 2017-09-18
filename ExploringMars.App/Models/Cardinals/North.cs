@@ -3,34 +3,34 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ExploringMars.Model.Cardinals
+namespace ExploringMars.Models.Cardinals
 {
-    public class West : Direction
+    public class North : Direction
     {
         public override Point Current { get; protected set; }
         public override Point Left { get; protected set; }
         public override Point Right { get; protected set; }
 
-        public West()
+        public North()
         {
-            Current = Point.West;
-            Left = Point.South;
-            Right = Point.North;
+            Current = Point.North;
+            Left = Point.West;
+            Right = Point.East;
         }
 
         public override bool IsPossibleMove(SpaceProbe spaceProbe, SpaceProbePositioner spaceProbePositioner)
         {
-            return spaceProbe.PositionX > 0;
+            return spaceProbe.PositionY < spaceProbePositioner.LimitY;
         }
 
         public override Direction ToLeft()
         {
-            return new South();
+            return new West();
         }
 
         public override Direction ToRight()
         {
-            return new North();
+            return new East();
         }
     }
 }

@@ -6,3 +6,9 @@ services:
     build:
       context: ./ExploringMars
       dockerfile: Dockerfile
+
+  exploringmars.app:
+    image: exploringmars.app
+    build:
+      context: ./ExploringMars.App
+      dockerfile: Dockerfile
