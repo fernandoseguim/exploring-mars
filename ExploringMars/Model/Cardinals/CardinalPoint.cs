@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ExploringMars.Model
+namespace ExploringMars.Model.Cardinals
 {
-    public enum CardinalPoints
+    public enum Point
     {
         [Display(Name = "N")]
         North,
