@@ -27,5 +27,10 @@
         {
             return new West();
         }
+
+        public override int Step(SpaceProbe spaceProbe)
+        {
+            return spaceProbe.PositionY--;
+        }
     }
 }

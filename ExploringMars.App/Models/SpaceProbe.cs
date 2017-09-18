@@ -25,16 +25,9 @@ namespace ExploringMars.Models
         }
 
         public void Moving() {
-            
-            if (Direction.Current.Equals(Point.East) || (Direction.Current.Equals(Point.West)))
-            {
-                PositionX++;
-            }
-            else
-            {
-                PositionY++;
-            }
-            
+
+            Direction.Step(this);
+
         }
 
     }

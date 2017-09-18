@@ -18,7 +18,7 @@ namespace XUnitTestExploringMars
                 PositionY = limitY
 
             };
-            MotionAgent motionAgent = new MotionAgent(spaceProbePositioner);
+            MovimentAgent motionAgent = new MovimentAgent(spaceProbePositioner);
             spaceProbePositioner.MoveSpaceProbe(spaceProbe, motionAgent);
         }
 

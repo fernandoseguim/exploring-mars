@@ -17,6 +17,8 @@ namespace ExploringMars.Models.Cardinals
 
         public abstract Direction ToLeft();
 
-        public abstract Direction ToRight();        
+        public abstract Direction ToRight();
+
+        public abstract int Step(SpaceProbe spaceProbe);
     }
 }

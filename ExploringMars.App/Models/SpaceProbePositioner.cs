@@ -16,7 +16,7 @@ namespace ExploringMars.Models
             this.LimitY = limitY;
         }
 
-        public void MoveSpaceProbe(SpaceProbe spaceProbe, IMotionAgent motionAgent)
+        public void MoveSpaceProbe(SpaceProbe spaceProbe, IMovimentAgent motionAgent)
         {
             motionAgent.Move(spaceProbe);
         }

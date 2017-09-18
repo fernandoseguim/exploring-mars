@@ -32,5 +32,10 @@ namespace ExploringMars.Models.Cardinals
         {
             return new East();
         }
+
+        public override int Step(SpaceProbe spaceProbe)
+        {
+            return spaceProbe.PositionY++;
+        }
     }
 }

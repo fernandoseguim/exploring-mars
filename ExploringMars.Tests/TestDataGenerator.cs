@@ -76,6 +76,47 @@ namespace XUnitTestExploringMars
             yield return new object[] { 0, 8, new West { } };
         }
 
+
+        public static IEnumerable<object[]> GetParameterToMoviments()
+        {
+
+            yield return new object[]
+            {
+                "L M L M L M L M M",
+                new SpaceProbe
+                {
+                    Direction = new North { },
+                    PositionX = 1,
+                    PositionY = 2
+                },
+                new SpaceProbe
+                {
+                    Direction = new North { },
+                    PositionX = 1,
+                    PositionY = 3
+                }
+            };
+
+            yield return new object[]
+            {
+                "M M R M M R M R R M",
+                new SpaceProbe
+                {
+                    Direction = new East { },
+                    PositionX = 3,
+                    PositionY = 3
+                },
+                new SpaceProbe
+                {
+                    Direction = new East { },
+                    PositionX = 5,
+                    PositionY = 1
+                }
+            };
+
+        }
+
+
         public IEnumerator<object[]> GetEnumerator()
         {
             throw new NotImplementedException();
