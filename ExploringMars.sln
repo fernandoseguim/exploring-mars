@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExploringMars", "ExploringM
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{0CC9721B-0F96-40E7-9A00-0E9CD3F229A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitTestExploringMars", "XUnitTestExploringMars\XUnitTestExploringMars.csproj", "{0265A341-9463-46CF-B821-6113CE697896}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XUnitTestExploringMars", "XUnitTestExploringMars\XUnitTestExploringMars.csproj", "{9A6E831A-6DCB-498D-A5E7-F1BC08883B68}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{0CC9721B-0F96-40E7-9A00-0E9CD3F229A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0CC9721B-0F96-40E7-9A00-0E9CD3F229A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0CC9721B-0F96-40E7-9A00-0E9CD3F229A2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0265A341-9463-46CF-B821-6113CE697896}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0265A341-9463-46CF-B821-6113CE697896}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0265A341-9463-46CF-B821-6113CE697896}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0265A341-9463-46CF-B821-6113CE697896}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A6E831A-6DCB-498D-A5E7-F1BC08883B68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A6E831A-6DCB-498D-A5E7-F1BC08883B68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A6E831A-6DCB-498D-A5E7-F1BC08883B68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A6E831A-6DCB-498D-A5E7-F1BC08883B68}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

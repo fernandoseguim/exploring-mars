@@ -56,6 +56,25 @@ namespace XUnitTestExploringMars
 
         }
 
+        public static IEnumerable<object[]> GetParamsMoveToNorth()
+        {
+            yield return new object[]  { 2, 5, new North { } };
+        }
+
+        public static IEnumerable<object[]> GetParamsMoveToEast()
+        {
+            yield return new object[] { 2, 5, new East { } };
+        }
+
+        public static IEnumerable<object[]> GetParamsMoveEast()
+        {
+            yield return new object[] { 10, 8, new East { } };
+        }
+
+        public static IEnumerable<object[]> GetParamsMoveToWest()
+        {
+            yield return new object[] { 0, 8, new West { } };
+        }
 
         public IEnumerator<object[]> GetEnumerator()
         {
