@@ -1,4 +1,7 @@
-﻿using System;
+﻿using ExploringMars.Factories;
+using ExploringMars.Models;
+using ExploringMars.Models.Cardinals;
+using System;
 
 namespace ExploringMars.App
 {
@@ -6,7 +9,7 @@ namespace ExploringMars.App
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.ReadKey();
         }
     }
 }
