@@ -1,41 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace ExploringMars.Models.Cardinals
+﻿namespace ExploringMars.Models.Cartesians
 {
-    public class North : Direction
+    public class South : Direction
     {
         public override Point Current { get; protected set; }
         public override Point Left { get; protected set; }
         public override Point Right { get; protected set; }
 
-        public North()
+        public South()
         {
-            Current = Point.North;
-            Left = Point.West;
-            Right = Point.East;
+            Current = Point.South;
+            Left = Point.East;
+            Right = Point.West;
         }
 
         public override bool IsPossibleMove(SpaceProbe spaceProbe, SpaceProbePositioner spaceProbePositioner)
         {
-            return spaceProbe.PositionY < spaceProbePositioner.LimitY;
+            return spaceProbe.PositionY > 0;
         }
 
         public override Direction ToLeft()
         {
-            return new West();
+            return new East();
         }
 
         public override Direction ToRight()
         {
-            return new East();
+            return new West();
         }
 
         public override int Step(SpaceProbe spaceProbe)
         {
-            return spaceProbe.PositionY++;
+            return spaceProbe.PositionY--;
         }
     }
 }

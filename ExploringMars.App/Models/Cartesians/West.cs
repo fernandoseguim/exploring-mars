@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ExploringMars.Models.Cardinals
+namespace ExploringMars.Models.Cartesians
 {
     public class West : Direction
     {

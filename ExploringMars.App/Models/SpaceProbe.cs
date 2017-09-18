@@ -1,4 +1,4 @@
-﻿using ExploringMars.Models.Cardinals;
+﻿using ExploringMars.Models.Cartesians;
 using System;
 using System.Collections.Generic;
 using System.Linq;
