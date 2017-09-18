@@ -1,11 +1,6 @@
 ﻿using ExploringMars.Factories;
 using ExploringMars.Models;
-using ExploringMars.Models.Cardinals;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Xunit;
-using XUnitTestExploringMars;
 
 namespace ExploringMars.Tests
 {

@@ -1,15 +1,15 @@
 using ExploringMars.Models;
-using ExploringMars.Models.Cardinals;
+using ExploringMars.Models.Cartesians;
 using Xunit;
 
-namespace XUnitTestExploringMars
+namespace ExploringMars.Tests
 {
 
     public class TestSpaceProbe
     {
 
         [Theory]
-        [MemberData(nameof(TestDataGenerator.GetDirectionsFromDataGenerator), MemberType = typeof(TestDataGenerator))]
+        [MemberData(nameof(TestDataGenerator.GetDirections), MemberType = typeof(TestDataGenerator))]
         public void TestCurrentDirectionToCardinaisPoints(Direction north, Direction south, Direction east, Direction west)
         {
             Assert.Equal(north.Current, Point.North);
@@ -19,91 +19,55 @@ namespace XUnitTestExploringMars
         }
 
         [Theory]
-        [MemberData(nameof(TestDataGenerator.GetSpaceProbeParamsFromDataGenerator), MemberType = typeof(TestDataGenerator))]
-        public void TestTurnToLeft(SpaceProbe spaceProbeN, SpaceProbe spaceProbeS, SpaceProbe spaceProbeE, SpaceProbe spaceProbeW)
+        [MemberData(nameof(TestDataGenerator.GetParamsToTestTurnToLeft), MemberType = typeof(TestDataGenerator))]
+        public void TestTurnToLeft(SpaceProbe spaceProbe, SpaceProbe expected)
         {
+            spaceProbe.TurnLeft();
+            Assert.Equal(expected.Direction.Current, spaceProbe.Direction.Current);   
+        }
+
+        [Theory]
+        [MemberData(nameof(TestDataGenerator.GetParamsToTestTurnToRight), MemberType = typeof(TestDataGenerator))]
+        public void TestTurnToRight(SpaceProbe spaceProbe, SpaceProbe expected)
+        {
+            spaceProbe.TurnRight();
+            Assert.Equal(expected.Direction.Current, spaceProbe.Direction.Current);
+        }
+
+        [Theory]
+        [MemberData(nameof(TestDataGenerator.GetSpaceProbeParamsToMove), MemberType = typeof(TestDataGenerator))]
+        public void TestMoveToFrontInCurrentDirection(SpaceProbe spaceProbe, SpaceProbe expected)
+        {
+            spaceProbe.Moving();
+            Assert.Equal(expected.PositionX, spaceProbe.PositionX);
+            Assert.Equal(expected.PositionY, spaceProbe.PositionY);
             
-            spaceProbeN.TurnLeft();
-            spaceProbeS.TurnLeft();
-            spaceProbeE.TurnLeft();
-            spaceProbeW.TurnLeft();
-
-            Assert.Equal(Point.West, spaceProbeN.Direction.Current);
-            Assert.Equal(Point.East, spaceProbeS.Direction.Current);
-            Assert.Equal(Point.North, spaceProbeE.Direction.Current);
-            Assert.Equal(Point.South, spaceProbeW.Direction.Current);
         }
 
         [Theory]
-        [MemberData(nameof(TestDataGenerator.GetSpaceProbeParamsFromDataGenerator), MemberType = typeof(TestDataGenerator))]
-        public void TestTurnToRight(SpaceProbe spaceProbeN, SpaceProbe spaceProbeS, SpaceProbe spaceProbeE, SpaceProbe spaceProbeW)
+        [MemberData(nameof(TestDataGenerator.GetParamsToTurnLeftAndMove), MemberType = typeof(TestDataGenerator))]
+        public void TestMoveToFrontAfterTurnLeft(SpaceProbe spaceProbe, SpaceProbe expected)
         {
+            spaceProbe.TurnLeft();
+            spaceProbe.Moving();
 
-            spaceProbeN.TurnRight();
-            spaceProbeS.TurnRight();
-            spaceProbeE.TurnRight();
-            spaceProbeW.TurnRight();
+            Assert.Equal(expected.Direction.Current, spaceProbe.Direction.Current);
+            Assert.Equal(expected.PositionX, spaceProbe.PositionX);
+            Assert.Equal(expected.PositionY, spaceProbe.PositionY);
 
-            Assert.Equal(Point.East, spaceProbeN.Direction.Current);
-            Assert.Equal(Point.West, spaceProbeS.Direction.Current);
-            Assert.Equal(Point.South, spaceProbeE.Direction.Current);
-            Assert.Equal(Point.North, spaceProbeW.Direction.Current);
         }
 
         [Theory]
-        [MemberData(nameof(TestDataGenerator.GetSpaceProbeParamsFromDataGenerator), MemberType = typeof(TestDataGenerator))]
-        public void TestMoveToFrontInCurrentDirection(SpaceProbe spaceProbeN, SpaceProbe spaceProbeS, SpaceProbe spaceProbeE, SpaceProbe spaceProbeW)
+        [MemberData(nameof(TestDataGenerator.GetParamsToTurnRightAndMove), MemberType = typeof(TestDataGenerator))]
+        public void TestMoveToFrontAfterTurnRight(SpaceProbe spaceProbe, SpaceProbe expected)
         {
+            spaceProbe.TurnRight();
+            spaceProbe.Moving();
+            
+            Assert.Equal(expected.Direction.Current, spaceProbe.Direction.Current);
+            Assert.Equal(expected.PositionX, spaceProbe.PositionX);
+            Assert.Equal(expected.PositionY, spaceProbe.PositionY);
 
-            spaceProbeN.Moving();
-            spaceProbeS.Moving();
-            spaceProbeE.Moving();
-            spaceProbeW.Moving();
-
-            Assert.Equal(1, spaceProbeN.PositionY);
-            Assert.Equal(1, spaceProbeS.PositionY);
-            Assert.Equal(1, spaceProbeE.PositionX);
-            Assert.Equal(1, spaceProbeW.PositionX);
-        }
-
-        [Theory]
-        [MemberData(nameof(TestDataGenerator.GetSpaceProbeParamsFromDataGenerator), MemberType = typeof(TestDataGenerator))]
-        public void TestMoveToFrontAfterTurnLeft(SpaceProbe spaceProbeN, SpaceProbe spaceProbeS, SpaceProbe spaceProbeE, SpaceProbe spaceProbeW)
-        {
-            spaceProbeN.TurnLeft();
-            spaceProbeS.TurnLeft();
-            spaceProbeE.TurnLeft();
-            spaceProbeW.TurnLeft();
-
-            spaceProbeN.Moving();
-            spaceProbeS.Moving();
-            spaceProbeE.Moving();
-            spaceProbeW.Moving();
-
-            Assert.Equal(1, spaceProbeN.PositionX);
-            Assert.Equal(1, spaceProbeS.PositionX);
-            Assert.Equal(1, spaceProbeE.PositionY);
-            Assert.Equal(1, spaceProbeW.PositionY);
-        }
-
-        [Theory]
-        [MemberData(nameof(TestDataGenerator.GetSpaceProbeParamsFromDataGenerator), MemberType = typeof(TestDataGenerator))]
-        public void TestMoveToFrontAfterTurnRight(SpaceProbe spaceProbeN, SpaceProbe spaceProbeS, SpaceProbe spaceProbeE, SpaceProbe spaceProbeW)
-        {
-            spaceProbeN.TurnRight();
-            spaceProbeS.TurnRight();
-            spaceProbeE.TurnRight();
-            spaceProbeW.TurnRight();
-
-            spaceProbeN.Moving();
-            spaceProbeS.Moving();
-            spaceProbeE.Moving();
-            spaceProbeW.Moving();
-
-            Assert.Equal(1, spaceProbeN.PositionX);
-            Assert.Equal(1, spaceProbeS.PositionX);
-            Assert.Equal(1, spaceProbeE.PositionY);
-            Assert.Equal(1, spaceProbeW.PositionY);
         }
 
     }

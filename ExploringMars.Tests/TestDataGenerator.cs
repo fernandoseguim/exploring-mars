@@ -1,18 +1,16 @@
 ﻿using ExploringMars.Models;
-using ExploringMars.Models.Cardinals;
+using ExploringMars.Models.Cartesians;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Text;
-using Xunit;
 
-namespace XUnitTestExploringMars
+namespace ExploringMars.Tests
 {
-    
+
     public class TestDataGenerator : IEnumerable<object[]>
     {
         
-        public static IEnumerable<object[]> GetDirectionsFromDataGenerator()
+        public static IEnumerable<object[]> GetDirections()
         {
             yield return new object[]
             {
@@ -24,7 +22,7 @@ namespace XUnitTestExploringMars
             
         }
 
-        public static IEnumerable<object[]> GetSpaceProbeParamsFromDataGenerator()
+        public static IEnumerable<object[]> GetParamsToTestTurnToLeft()
         {
             yield return new object[]
             {
@@ -33,23 +31,311 @@ namespace XUnitTestExploringMars
                     PositionX = 0,
                     PositionY = 0
                 },
+                new SpaceProbe {
+                    Direction = new West { },
+                    PositionX = 0,
+                    PositionY = 0
+                }
+                
+            };
 
+            yield return new object[]
+            {
                 new SpaceProbe {
                     Direction = new South { },
                     PositionX = 0,
                     PositionY = 0
                 },
+                new SpaceProbe {
+                    Direction = new East { },
+                    PositionX = 0,
+                    PositionY = 0
+                }
 
+            };
+
+            yield return new object[]
+            {
                 new SpaceProbe {
                     Direction = new East { },
                     PositionX = 0,
                     PositionY = 0
                 },
+                new SpaceProbe {
+                    Direction = new North { },
+                    PositionX = 0,
+                    PositionY = 0
+                }
 
+            };
+
+            yield return new object[]
+            {
                 new SpaceProbe {
                     Direction = new West { },
                     PositionX = 0,
                     PositionY = 0
+                },
+                new SpaceProbe {
+                    Direction = new South { },
+                    PositionX = 0,
+                    PositionY = 0
+                }
+
+            };
+
+        }
+
+        public static IEnumerable<object[]> GetParamsToTestTurnToRight()
+        {
+            yield return new object[]
+            {
+                new SpaceProbe {
+                    Direction = new North { },
+                    PositionX = 0,
+                    PositionY = 0
+                },
+                new SpaceProbe {
+                    Direction = new East { },
+                    PositionX = 0,
+                    PositionY = 0
+                }
+
+            };
+
+            yield return new object[]
+            {
+                new SpaceProbe {
+                    Direction = new South { },
+                    PositionX = 0,
+                    PositionY = 0
+                },
+                new SpaceProbe {
+                    Direction = new West { },
+                    PositionX = 0,
+                    PositionY = 0
+                }
+
+            };
+
+            yield return new object[]
+            {
+                new SpaceProbe {
+                    Direction = new East { },
+                    PositionX = 0,
+                    PositionY = 0
+                },
+                new SpaceProbe {
+                    Direction = new South { },
+                    PositionX = 0,
+                    PositionY = 0
+                }
+
+            };
+
+            yield return new object[]
+            {
+                new SpaceProbe {
+                    Direction = new West { },
+                    PositionX = 0,
+                    PositionY = 0
+                },
+                new SpaceProbe {
+                    Direction = new North { },
+                    PositionX = 0,
+                    PositionY = 0
+                }
+
+            };
+
+        }
+
+        public static IEnumerable<object[]> GetSpaceProbeParamsToMove()
+        {
+            yield return new object[]
+            {
+                new SpaceProbe {
+                    Direction = new North { },
+                    PositionX = 5,
+                    PositionY = 5
+                },
+                new SpaceProbe {
+                    Direction = new North { },
+                    PositionX = 5,
+                    PositionY = 6
+                }
+
+            };
+
+            yield return new object[]
+            {
+                new SpaceProbe {
+                    Direction = new South { },
+                    PositionX = 5,
+                    PositionY = 5
+                },
+                new SpaceProbe {
+                    Direction = new South { },
+                    PositionX = 5,
+                    PositionY = 4
+                }
+
+            };
+
+            yield return new object[]
+            {
+                new SpaceProbe {
+                    Direction = new East { },
+                    PositionX = 5,
+                    PositionY = 5
+                },
+                new SpaceProbe {
+                    Direction = new East { },
+                    PositionX = 6,
+                    PositionY = 5
+                }
+
+            };
+
+            yield return new object[]
+            {
+                new SpaceProbe {
+                    Direction = new West { },
+                    PositionX = 5,
+                    PositionY = 5
+                },
+                new SpaceProbe {
+                    Direction = new West { },
+                    PositionX = 4,
+                    PositionY = 5
+                }
+
+            };
+
+        }
+
+        public static IEnumerable<object[]> GetParamsToTurnLeftAndMove()
+        {
+            yield return new object[]
+            {
+                new SpaceProbe {
+                    Direction = new North { },
+                    PositionX = 5,
+                    PositionY = 5
+                },
+                new SpaceProbe {
+                    Direction = new West { },
+                    PositionX = 4,
+                    PositionY = 5
+                }
+
+            };
+
+            yield return new object[]
+            {
+                new SpaceProbe {
+                    Direction = new South { },
+                    PositionX = 5,
+                    PositionY = 5
+                },
+                new SpaceProbe {
+                    Direction = new East { },
+                    PositionX = 6,
+                    PositionY = 5
+                }
+
+            };
+
+            yield return new object[]
+            {
+                new SpaceProbe {
+                    Direction = new East { },
+                    PositionX = 5,
+                    PositionY = 5
+                },
+                new SpaceProbe {
+                    Direction = new North { },
+                    PositionX = 5,
+                    PositionY = 6
+                }
+
+            };
+
+            yield return new object[]
+            {
+                new SpaceProbe {
+                    Direction = new West { },
+                    PositionX = 5,
+                    PositionY = 5
+                },
+                new SpaceProbe {
+                    Direction = new South { },
+                    PositionX = 5,
+                    PositionY = 4
+                }
+
+            };
+
+        }
+
+        public static IEnumerable<object[]> GetParamsToTurnRightAndMove()
+        {
+            yield return new object[]
+            {
+                new SpaceProbe {
+                    Direction = new North { },
+                    PositionX = 5,
+                    PositionY = 5
+                },
+                new SpaceProbe {
+                    Direction = new East { },
+                    PositionX = 6,
+                    PositionY = 5
+                }
+
+            };
+
+            yield return new object[]
+            {
+                new SpaceProbe {
+                    Direction = new South { },
+                    PositionX = 5,
+                    PositionY = 5
+                },
+                new SpaceProbe {
+                    Direction = new West { },
+                    PositionX = 4,
+                    PositionY = 5
+                }
+
+            };
+
+            yield return new object[]
+            {
+                new SpaceProbe {
+                    Direction = new East { },
+                    PositionX = 5,
+                    PositionY = 5
+                },
+                new SpaceProbe {
+                    Direction = new South { },
+                    PositionX = 5,
+                    PositionY = 4
+                }
+
+            };
+
+            yield return new object[]
+            {
+                new SpaceProbe {
+                    Direction = new West { },
+                    PositionX = 5,
+                    PositionY = 5
+                },
+                new SpaceProbe {
+                    Direction = new North { },
+                    PositionX = 5,
+                    PositionY = 6
                 }
 
             };
@@ -65,18 +351,12 @@ namespace XUnitTestExploringMars
         {
             yield return new object[] { 2, 5, new East { } };
         }
-
-        public static IEnumerable<object[]> GetParamsMoveEast()
-        {
-            yield return new object[] { 10, 8, new East { } };
-        }
-
+        
         public static IEnumerable<object[]> GetParamsMoveToWest()
         {
             yield return new object[] { 0, 8, new West { } };
         }
-
-
+        
         public static IEnumerable<object[]> GetParameterToMoviments()
         {
 
@@ -115,8 +395,7 @@ namespace XUnitTestExploringMars
             };
 
         }
-
-
+        
         public IEnumerator<object[]> GetEnumerator()
         {
             throw new NotImplementedException();

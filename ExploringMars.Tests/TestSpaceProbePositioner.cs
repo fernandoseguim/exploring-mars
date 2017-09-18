@@ -1,9 +1,9 @@
 ﻿using ExploringMars.Exceptions;
 using ExploringMars.Models;
-using ExploringMars.Models.Cardinals;
+using ExploringMars.Models.Cartesians;
 using Xunit;
 
-namespace XUnitTestExploringMars
+namespace ExploringMars.Tests
 {
     public class TestSpaceProbePositioner
     {
