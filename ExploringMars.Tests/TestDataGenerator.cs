@@ -362,7 +362,7 @@ namespace ExploringMars.Tests
 
             yield return new object[]
             {
-                "L M L M L M L M M",
+                "LMLMLMLMM",
                 new SpaceProbe
                 {
                     Direction = new North { },
@@ -379,7 +379,7 @@ namespace ExploringMars.Tests
 
             yield return new object[]
             {
-                "M M R M M R M R R M",
+                "MMRMMRMRRM",
                 new SpaceProbe
                 {
                     Direction = new East { },
@@ -395,15 +395,9 @@ namespace ExploringMars.Tests
             };
 
         }
-        
-        public IEnumerator<object[]> GetEnumerator()
-        {
-            throw new NotImplementedException();
-        }
 
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            throw new NotImplementedException();
-        }
-    }
+		public IEnumerator<object[]> GetEnumerator() => throw new NotImplementedException();
+
+		IEnumerator IEnumerable.GetEnumerator() => throw new NotImplementedException();
+	}
 }

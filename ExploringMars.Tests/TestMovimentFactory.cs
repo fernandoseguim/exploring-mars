@@ -10,10 +10,10 @@ namespace ExploringMars.Tests
         [MemberData(nameof(TestDataGenerator.GetParameterToMoviments), MemberType = typeof(TestDataGenerator))]
         public void TestCreateMoviments(string moviments, SpaceProbe spaceProbe, SpaceProbe expected)
         {
-            int limitX = 5;
-            int limitY = 5;
+            var limitX = 5;
+            var limitY = 5;
             
-            SpaceProbePositioner spaceProbePositioner = new SpaceProbePositioner(limitX, limitY);
+            var spaceProbePositioner = new SpaceProbePositioner(limitX, limitY);
             spaceProbePositioner.MoveSpaceProbe(spaceProbe, MovimentsFactory.SetMoviments(moviments, spaceProbePositioner));
                         
             Assert.Equal(expected.PositionX, spaceProbe.PositionX);

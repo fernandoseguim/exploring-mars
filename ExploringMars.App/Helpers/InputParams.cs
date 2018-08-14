@@ -1,17 +1,14 @@
-﻿using ExploringMars.Exceptions;
-using ExploringMars.Models.Cartesians;
+﻿using ExploringMars.Models.Cartesians;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ExploringMars.Helpers
 {
-    public class InputParams
+	public class InputParams
     {
         public static int Position(string msg)
         {
             Console.WriteLine(msg);
-            if (!Int32.TryParse(Console.ReadLine(), out int limitX))
+            if (!int.TryParse(Console.ReadLine(), out var limitX))
             {
                 throw new ArithmeticException("The value informed is not a number");
             }
@@ -22,7 +19,7 @@ namespace ExploringMars.Helpers
         {
             Console.WriteLine(msg);
 
-            string directionString = Console.ReadLine().ToUpper().Trim();
+            var directionString = Console.ReadLine().ToUpper().Trim();
             
             switch (directionString)
             {

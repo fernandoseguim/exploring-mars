@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace ExploringMars.Models.Cartesians
+﻿namespace ExploringMars.Models.Cartesians
 {
-   
-    public abstract class Direction
+
+	public abstract class Direction
     {
         public abstract Point Current { get; protected set; }
         public abstract Point Left { get; protected set; }

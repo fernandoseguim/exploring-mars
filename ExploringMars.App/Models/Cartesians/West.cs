@@ -8,29 +8,18 @@
 
         public West()
         {
-            Current = Point.West;
-            Left = Point.South;
-            Right = Point.North;
+			this.Current = Point.West;
+			this.Left = Point.South;
+			this.Right = Point.North;
         }
 
-        public override bool IsPossibleMove(SpaceProbe spaceProbe, SpaceProbePositioner spaceProbePositioner)
-        {
-            return spaceProbe.PositionX > 0;
-        }
+		public override bool IsPossibleMove(SpaceProbe spaceProbe, SpaceProbePositioner spaceProbePositioner) => 
+			spaceProbe.PositionX > 0;
 
-        public override Direction ToLeft()
-        {
-            return new South();
-        }
+		public override Direction ToLeft() => new South();
 
-        public override Direction ToRight()
-        {
-            return new North();
-        }
+		public override Direction ToRight() => new North();
 
-        public override int Step(SpaceProbe spaceProbe)
-        {
-            return spaceProbe.PositionX--;
-        }
-    }
+		public override int Step(SpaceProbe spaceProbe) => spaceProbe.PositionX--;
+	}
 }

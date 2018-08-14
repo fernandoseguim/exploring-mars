@@ -1,12 +1,8 @@
 ﻿using ExploringMars.Exceptions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace ExploringMars.Models
 {
-    public class MovimentAgent : IMovimentAgent
+	public class MovimentAgent : IMovimentAgent
     {
         private SpaceProbePositioner spaceProbePositioner;
 
@@ -17,7 +13,7 @@ namespace ExploringMars.Models
         
         public void Move(SpaceProbe spaceProbe)
         {
-            if (spaceProbe.Direction.IsPossibleMove(spaceProbe, spaceProbePositioner))
+            if (spaceProbe.Direction.IsPossibleMove(spaceProbe, this.spaceProbePositioner))
             {
                 spaceProbe.Moving();
             }
@@ -26,9 +22,9 @@ namespace ExploringMars.Models
                 throw new SpaceProbePositionOutOfPlateauException(
                     spaceProbe.PositionX,
                     spaceProbe.PositionY,
-                    spaceProbePositioner.LimitX,
-                    spaceProbePositioner.LimitY
-                    );
+					this.spaceProbePositioner.LimitX,
+					this.spaceProbePositioner.LimitY
+					);
             }
         }
     }

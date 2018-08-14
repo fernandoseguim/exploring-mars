@@ -1,31 +1,29 @@
 ﻿using ExploringMars.Exceptions;
 using ExploringMars.Models;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace ExploringMars.Factories
 {
-    public class MovimentsFactory
+	public class MovimentsFactory
     {
-        public static IMovimentAgent SetMoviments(String moviments, SpaceProbePositioner spaceProbePositioner)
+        public static IMovimentAgent SetMoviments(string moviments, SpaceProbePositioner spaceProbePositioner)
         {
-            string[] _moviments = moviments.Split(" ");
-            List<IMovimentAgent> movimentsList = new List<IMovimentAgent>();
+            var _moviments = moviments.ToCharArray();
+            var movimentsList = new List<IMovimentAgent>();
 
-            foreach(string moviment in _moviments)
+            foreach(var moviment in _moviments)
             {
                 switch (moviment)
                 {
-                    case "L":
+                    case 'L':
                         movimentsList.Add(new LeftRedirectorAgent());
                         break;
 
-                    case "R":
+                    case 'R':
                         movimentsList.Add(new RigthRedirectorAgent());
                         break;
 
-                    case "M":
+                    case 'M':
                         movimentsList.Add(new MovimentAgent(spaceProbePositioner));
                         break;
                     default:

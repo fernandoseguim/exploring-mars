@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace ExploringMars.Models
+﻿namespace ExploringMars.Models
 {
-    public interface IMovimentAgent
+	public interface IMovimentAgent
     {
         void Move(SpaceProbe spaceProbe);
     }

@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ExploringMars.Models
+﻿namespace ExploringMars.Models
 {
-    public class RigthRedirectorAgent : IMovimentAgent
+	public class RigthRedirectorAgent : IMovimentAgent
     {
-        public void Move(SpaceProbe spaceProbe)
-        {
-            spaceProbe.TurnRight();
-        }
-    }
+		public void Move(SpaceProbe spaceProbe) => spaceProbe.TurnRight();
+	}
 }
